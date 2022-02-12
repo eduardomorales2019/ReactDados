@@ -2,12 +2,14 @@
   width: 400px;
   height: 100px;
   /* background: red; */
-  font-size: 200px;
+  font-size: 150px;
+  color: pink;
 }
 
 .game__container {
   display: flex;
   justify-content: center;
+  margin-top: 15%;
 }
 
 .button__container button {
@@ -25,6 +27,24 @@
   box-shadow: 1px 1px 10 px black;
 }
 .button__container button:hover {
-  background-color: brown;
+  background-color: pink;
   transition: 0.9s;
+}
+
+.rolando {
+  animation: roll 2s ease-in-out;
+}
+
+@keyframes roll {
+  0% {
+    transform: rotate(0deg) translate(3px, 3px);
+    rotate: (20deg);
+  }
+  50% {
+    transform: rotate(360deg) scale(0.5) skew(-200deg) translate(200px, 0px);
+    color: purple;
+  }
+  100% {
+    transform: rotate(0deg) skew(5deg) translate(3px, 3px);
+  }
 }

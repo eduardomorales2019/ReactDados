@@ -14,7 +14,7 @@ class DadosComponent extends React.Component {
   rollingDado = () => {
     const roller =
       this.props.sides[Math.floor(Math.random() * this.props.sides.length)];
-    console.log(roller);
+    console.log(roller, "Soy la nuevo state de sides ");
     this.setState({ dado: roller, rolling: true });
     // after 2 second, change the state to false again
     setTimeout(() => {
@@ -23,14 +23,23 @@ class DadosComponent extends React.Component {
   };
 
   render() {
+    const diseno = {
+      color: "purple",
+      background: "pink",
+    };
     return (
       <div className="button__container">
         <div className="game__container">
-          <Dado roller={this.state.dado} />
-          {/* <Dado roller={this.state.dado} /> */}
+          <Dado roller={this.state.dado} rolling={this.state.rolling} />
+          <Dado roller={this.state.dado} rolling={this.state.rolling} />
         </div>
-        <button onClick={this.rolling}>
-          {this.state.rolling ? "roling" : "push"}
+        <button
+          style={this.props.rolling === true ? diseno : null}
+          onClick={this.rolling}
+          disabled={this.state.rolling}
+          className=""
+        >
+          {this.state.rolling ? "roling dado" : "push"}
         </button>
       </div>
     );

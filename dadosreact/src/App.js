@@ -4,7 +4,7 @@ import DadosComponent from "./components/Game";
 function App() {
   return (
     <div className="App">
-      <h1>Dados React</h1>
+      <h1 className="title">Dados React</h1>
       <DadosComponent />
     </div>
   );
