@@ -5,6 +5,8 @@
   font-size: 150px;
   color: pink;
 }
+i {
+}
 
 .game__container {
   display: flex;
